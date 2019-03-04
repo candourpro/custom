@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
-export default {
-  match: ({ custom }, value) => (
-    custom && value && _.has(custom, value)
+export default (config) => ({
+  match: (_theme, value) => (
+    config && value && _.has(config, value)
   ),
-  value: ({ custom }, value) => custom[value],
-}
+  value: (_theme, value) => config[value],
+})
